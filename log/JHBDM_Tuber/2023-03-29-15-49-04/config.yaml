@@ -1,0 +1,148 @@
+CONFIG:
+  AUG:
+    AUTO_AUGMENT: rand-m9-mstd0.5-inc1
+    COLOR_JITTER: 0.4
+    CUTMIX: 1.0
+    CUTMIX_MINMAX: null
+    LABEL_SMOOTHING: 0.1
+    MIXUP: 0.8
+    MIXUP_MODE: batch
+    MIXUP_PROB: 1.0
+    MIXUP_SWITCH_PROB: 0.5
+    RECOUNT: 1
+    REMODE: pixel
+    REPEATED_AUG: true
+    REPROB: 0.25
+  DATA:
+    ANNO_PATH: fileserver/data/JHMDB
+    CLIP_LEN: 16
+    CROP_SIZE: 224
+    DATASET_NAME: jhmdb
+    DATA_PATH: fileserver/data/JHMDB/Frames
+    FRAME_RATE: 2
+    IMG_RESHAPE_SIZE: 256
+    IMG_SIZE: 224
+    INTERPOLATION: bicubic
+    KEEP_ASPECT_RATIO: false
+    MULTIGRID: false
+    NEW_HEIGHT: 256
+    NEW_WIDTH: 340
+    NUM_CLASSES: 21
+    NUM_CROP: 1
+    NUM_SEGMENT: 1
+    SHORT_SIDE_SIZE: 256
+    TEMP_LEN: 32
+    TEST_NUM_CROP: 3
+    TEST_NUM_SEGMENT: 10
+    TRAIN_ANNO_PATH: ''
+    TRAIN_DATA_PATH: ''
+    VAL_ANNO_PATH: ''
+    VAL_DATA_PATH: ''
+  EVAL_ONLY: true
+  INFERENCE:
+    FEAT: false
+  LOG:
+    BASE_PATH: project/tuber/log/JHBDM_Tuber
+    DISPLAY_FREQ: 1
+    EVAL_DIR: project/tuber/log/JHBDM_Tuber/eval
+    EXP_NAME: 2023-03-29-15-49-04
+    LOG_DIR: tb_log
+    RES_DIR: tmp_jhmdb
+    SAVE_DIR: checkpoints
+    SAVE_FREQ: 1
+  LOSS_COFS:
+    BBOX_COF: 5
+    CLIPS_MAX_NORM: 0.1
+    DICE_COF: 1
+    EOS_COF: 0.1
+    GIOU_COF: 2
+    LOSS_CHANGE_COF: 2
+    MASK_COF: 1
+    WEIGHT: 10
+    WEIGHT_CHANGE: 1000
+  MATCHER:
+    BEFORE: false
+    BNY_LOSS: false
+    COST_BBOX: 5
+    COST_CLASS: 1
+    COST_GIOU: 2
+  MODEL:
+    BACKBONE_NAME: CSN-152
+    BN_EVAL: false
+    BN_FROZEN: false
+    DEC_LAYERS: 6
+    DIM_FEEDFORWARD: 2048
+    DROPOUT: 0.1
+    DROP_PATH_RATE: 0.1
+    DROP_RATE: 0.0
+    DS_RATE: 8
+    D_MODEL: 256
+    ENC_LAYERS: 6
+    GENERATE_LFB: false
+    LAST_STRIDE: false
+    LOAD: true
+    LOAD_FC: true
+    NAME: jhmdb_detr_9_224
+    NHEAD: 8
+    NORMALIZE_BEFORE: false
+    NUM_ENCODER_LAYERS: 12
+    PARTIAL_BN: false
+    PRETRAINED: false
+    PRETRAINED_BASE: true
+    PRETRAINED_PATH: project/tuber/pre_train/TubeR_CSN152_JHMDB.pth
+    PRETRAIN_BACKBONE_DIR: project/tuber/pre_train/irCSN_152_ft_kinetics_from_ig65m_f126851907.mat
+    PRETRAIN_TRANSFORMER_DIR: project/tuber/pre_train/detr.pth
+    QUERY_NUM: 10
+    SAMPLE_RATE: 2
+    SINGLE_FRAME: false
+    TEMPORAL_DS_STRATEGY: decoder
+    TEMP_LEN: 32
+    USE_AFFINE: false
+  TRAIN:
+    AUX_LOSS: true
+    BATCH_SIZE: 2
+    EPOCH_NUM: 20
+    LR: 0.0001
+    LR_BACKBONE: 1.0e-05
+    LR_MILESTONE:
+    - 10
+    - 15
+    LR_POLICY: step
+    LR_SCHEDULER:
+      DECAY_EPOCHS: 30
+      DECAY_RATE: 0.1
+      NAME: cosine
+    MIN_LR: 1.0e-05
+    MOMENTUM: 0.9
+    OPTIMIZER:
+      BETAS:
+      - 0.9
+      - 0.999
+      EPS: 1.0e-08
+      MOMENTUM: 0.9
+      NAME: SGD
+    START_EPOCH: 0
+    STEP: 0.1
+    USE_WARMUP: true
+    WARMUP_EPOCHS: 4
+    WARMUP_START_LR: 1.0e-05
+    WEIGHT_DECAY: 0.05
+    W_DECAY: 0.0001
+  TWO_STREAM: false
+  USE_LFB: false
+  USE_LOCATION: false
+  VAL:
+    BATCH_SIZE: 1
+    FREQ: 2
+DDP_CONFIG:
+  AUTO_RANK_MATCH: true
+  DISTRIBUTED: true
+  DIST_BACKEND: nccl
+  DIST_URL: tcp://10.0.0.9:10001
+  GPU: 0
+  GPU_WORLD_RANK: 0
+  GPU_WORLD_SIZE: 7
+  WOLRD_URLS:
+  - 10.0.0.9
+  WORLD_RANK: 0
+  WORLD_SIZE: 1
