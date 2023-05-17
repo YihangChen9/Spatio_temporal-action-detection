@@ -74,7 +74,7 @@ python3  train_tuber_ava.py
 ### Test(prototype)
 To Test, first modify the config file(in configuration,one for AVA, another one for JHMDB):
 - set the correct `WORLD_SIZE`, `GPU_WORLD_SIZE`, `DIST_URL`, `WOLRD_URLS` based on experiment setup.
-- set the `ANNO_PATH`, `DATA_PATH`(put only one avi or mp4 video,please) and `TEST_PATH`(path of the input video) to your local directory accordingly.
+- set the `ANNO_PATH`, `DATA_PATH`(video/JHMDB/test_frames) and `TEST_PATH`(path of the input video. put only one avi or mp4 video,please) to your local directory accordingly.
 - Download the pre-trained model and set `PRETRAINED_PATH` to model path.
 - make sure `LOAD` and `LOAD_FC` are set to True
 
