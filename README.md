@@ -26,16 +26,16 @@ https://github.com/YihangChen9/Spatio_temporal-action-detection
 1. Please download the [asset.zip](https://drive.google.com/file/d/1u2Vr_PBVb3M-cN7pj-F-yMVAuMENhKl3/view?usp=share_link)(annotation of the AVA dataset) directory from the github: datasets/asset. then unzipk into datasets/ directory
 2. Please download the [pre-train.zip](https://drive.google.com/file/d/1xoFLJhxRlfLW9xNM1Txer7H3BNWgDYpu/view?usp=share_link)(trained model) directory from the the github. then put under tuber directory.
 
-3. You can get [JHMDB](https://drive.google.com/file/d/1JFZomNYiTkfmjPX1M6syVAHCTm0jRtmj/view?usp=share_link) in this link, please download JHMDB.tar.gz. JHMDB-GT.pkl is the annotaiton file
-   TubeR_CSN152_JHMDB.pth is the trained model for JHMDB
-   TubeR_CSN152_AVA.pth is the trained model for JHMDB
-   irCSN_152_ft_kinetics_from_ig65m_f126851907.mat is the pre-train model of CSN152 as backbone
-   detr.pth initial transformer parameter setting for AVA TubeR
+3. You can get [JHMDB](https://drive.google.com/file/d/1JFZomNYiTkfmjPX1M6syVAHCTm0jRtmj/view?usp=share_link) in this link, please download JHMDB.tar.gz. JHMDB-GT.pkl is the annotaiton file:
+   TubeR_CSN152_JHMDB.pth is the trained model for JHMDB  
+   TubeR_CSN152_AVA.pth is the trained model for JHMDB  
+   irCSN_152_ft_kinetics_from_ig65m_f126851907.mat is the pre-train model of CSN152 as backbone  
+   detr.pth initial transformer parameter setting for AVA TubeR  
 
 4. To get AVA dataset, please run the three bash scripts in the datasets directory one by one(please set the path in bash file):
-   download_ava.sh(down the original video clip)
-   chunk_video.sh(chunk the clip from 15 min to 30 min)
-   extract_frame.sh(extract frame from the clip)
+   download_ava.sh(down the original video clip)  
+   chunk_video.sh(chunk the clip from 15 min to 30 min)  
+   extract_frame.sh(extract frame from the clip)  
 
 
 
