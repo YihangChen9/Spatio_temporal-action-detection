@@ -454,6 +454,7 @@ def main_worker(cfg):
     buff_output = np.concatenate(buff_output, axis=0)
     buff_anno = np.concatenate(buff_anno, axis=0)
     tmp_path = 'log/test/test_result.txt'
+    os.remove(tmp_path)
     with open(tmp_path, 'w') as f:
         for x in range(len(buff_id)):
             data = np.concatenate([buff_anno[x], buff_output[x]])

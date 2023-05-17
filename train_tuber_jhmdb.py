@@ -102,7 +102,7 @@ if __name__ == '__main__':
     # get configuration file
     parser = argparse.ArgumentParser(description='Train video action recognition transformer models.')
     parser.add_argument('--config-file',
-                        default='final_project/tuber/configuration/Tuber_CSN152_JHMDB.yaml',
+                        default='configuration/Tuber_CSN152_JHMDB.yaml',
                         help='path to config file.')
     args = parser.parse_args()
     cfg = get_cfg_defaults()
