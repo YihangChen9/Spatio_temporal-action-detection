@@ -1,6 +1,7 @@
 # Spatio-temporal Action Detection
 
-This repo is the code of the Spatio-temporal action detecion project which implement the tubelet-level transformer-based spatio-temporal action detection model--TubeR. 
+This repo is the code of the Spatio-temporal action detecion project which implement the tubelet-level transformer-based spatio-temporal action detection model--[TubeR](https://openaccess.thecvf.com/content/CVPR2022/papers/Zhao_TubeR_Tubelet_Transformer_for_Video_Action_Detection_CVPR_2022_paper.pdf).  
+This project will train and evaluate TubeR models on AVA2.1 and JHMDB datasets.
 
 ## Results
 
